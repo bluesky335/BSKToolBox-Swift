@@ -10,6 +10,7 @@
 		C4E8E7392090B767000F7B63 /* BSKToolBox_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4E8E72F2090B767000F7B63 /* BSKToolBox_Swift.framework */; };
 		C4E8E73E2090B767000F7B63 /* BSKToolBox_SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E8E73D2090B767000F7B63 /* BSKToolBox_SwiftTests.swift */; };
 		C4E8E7402090B767000F7B63 /* BSKToolBox_Swift.h in Headers */ = {isa = PBXBuildFile; fileRef = C4E8E7322090B767000F7B63 /* BSKToolBox_Swift.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C4E8E7632090BB12000F7B63 /* BSKUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E8E7622090BB12000F7B63 /* BSKUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		C4E8E7382090B767000F7B63 /* BSKToolBox-SwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BSKToolBox-SwiftTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4E8E73D2090B767000F7B63 /* BSKToolBox_SwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSKToolBox_SwiftTests.swift; sourceTree = "<group>"; };
 		C4E8E73F2090B767000F7B63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C4E8E7622090BB12000F7B63 /* BSKUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSKUtils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 			children = (
 				C4E8E7322090B767000F7B63 /* BSKToolBox_Swift.h */,
 				C4E8E7332090B767000F7B63 /* Info.plist */,
+				C4E8E7622090BB12000F7B63 /* BSKUtils.swift */,
 			);
 			path = "BSKToolBox-Swift";
 			sourceTree = "<group>";
@@ -148,6 +151,7 @@
 				TargetAttributes = {
 					C4E8E72E2090B767000F7B63 = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 0930;
 					};
 					C4E8E7372090B767000F7B63 = {
 						CreatedOnToolsVersion = 9.3;
@@ -194,6 +198,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4E8E7632090BB12000F7B63 /* BSKUtils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +344,7 @@
 		C4E8E7442090B767000F7B63 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -356,6 +362,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "cn.liuwanin.BSKToolBox-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -364,6 +371,7 @@
 		C4E8E7452090B767000F7B63 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -389,6 +397,7 @@
 		C4E8E7472090B767000F7B63 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YP8G3T6PA9;
 				INFOPLIST_FILE = "BSKToolBox-SwiftTests/Info.plist";
@@ -407,6 +416,7 @@
 		C4E8E7482090B767000F7B63 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YP8G3T6PA9;
 				INFOPLIST_FILE = "BSKToolBox-SwiftTests/Info.plist";
