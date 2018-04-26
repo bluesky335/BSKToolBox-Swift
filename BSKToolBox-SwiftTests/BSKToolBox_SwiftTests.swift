@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import BSKToolBox_Swift
+import BSKToolBox_Swift
 
 class BSKToolBox_SwiftTests: XCTestCase {
     
@@ -21,9 +21,11 @@ class BSKToolBox_SwiftTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func test_String_SHA256() {
+
+        let str = "abcdefg123456" as NSString
+        assert(str=="abcdefg123456")
+        
     }
     
     func testPerformanceExample() {

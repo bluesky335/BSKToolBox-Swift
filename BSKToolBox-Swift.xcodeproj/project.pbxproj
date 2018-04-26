@@ -11,6 +11,9 @@
 		C4E8E73E2090B767000F7B63 /* BSKToolBox_SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E8E73D2090B767000F7B63 /* BSKToolBox_SwiftTests.swift */; };
 		C4E8E7402090B767000F7B63 /* BSKToolBox_Swift.h in Headers */ = {isa = PBXBuildFile; fileRef = C4E8E7322090B767000F7B63 /* BSKToolBox_Swift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C4E8E7632090BB12000F7B63 /* BSKUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E8E7622090BB12000F7B63 /* BSKUtils.swift */; };
+		C4E8E76B20916991000F7B63 /* String+Hash.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E8E76A20916991000F7B63 /* String+Hash.swift */; };
+		C4E8E77D20917C0C000F7B63 /* NSString+HASH.h in Headers */ = {isa = PBXBuildFile; fileRef = C4E8E77B20917C0C000F7B63 /* NSString+HASH.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C4E8E77E20917C0C000F7B63 /* NSString+HASH.m in Sources */ = {isa = PBXBuildFile; fileRef = C4E8E77C20917C0C000F7B63 /* NSString+HASH.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +34,9 @@
 		C4E8E73D2090B767000F7B63 /* BSKToolBox_SwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSKToolBox_SwiftTests.swift; sourceTree = "<group>"; };
 		C4E8E73F2090B767000F7B63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4E8E7622090BB12000F7B63 /* BSKUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSKUtils.swift; sourceTree = "<group>"; };
+		C4E8E76A20916991000F7B63 /* String+Hash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Hash.swift"; sourceTree = "<group>"; };
+		C4E8E77B20917C0C000F7B63 /* NSString+HASH.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+HASH.h"; sourceTree = "<group>"; };
+		C4E8E77C20917C0C000F7B63 /* NSString+HASH.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+HASH.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,9 +79,12 @@
 		C4E8E7312090B767000F7B63 /* BSKToolBox-Swift */ = {
 			isa = PBXGroup;
 			children = (
+				C4E8E7692091696E000F7B63 /* Extensions */,
 				C4E8E7322090B767000F7B63 /* BSKToolBox_Swift.h */,
 				C4E8E7332090B767000F7B63 /* Info.plist */,
 				C4E8E7622090BB12000F7B63 /* BSKUtils.swift */,
+				C4E8E77B20917C0C000F7B63 /* NSString+HASH.h */,
+				C4E8E77C20917C0C000F7B63 /* NSString+HASH.m */,
 			);
 			path = "BSKToolBox-Swift";
 			sourceTree = "<group>";
@@ -89,6 +98,14 @@
 			path = "BSKToolBox-SwiftTests";
 			sourceTree = "<group>";
 		};
+		C4E8E7692091696E000F7B63 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C4E8E76A20916991000F7B63 /* String+Hash.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -96,6 +113,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4E8E77D20917C0C000F7B63 /* NSString+HASH.h in Headers */,
 				C4E8E7402090B767000F7B63 /* BSKToolBox_Swift.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -198,7 +216,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4E8E76B20916991000F7B63 /* String+Hash.swift in Sources */,
 				C4E8E7632090BB12000F7B63 /* BSKUtils.swift in Sources */,
+				C4E8E77E20917C0C000F7B63 /* NSString+HASH.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +364,7 @@
 		C4E8E7442090B767000F7B63 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -354,6 +375,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "BSKToolBox-Swift/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -362,15 +384,18 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "cn.liuwanin.BSKToolBox-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "arm64 armv7 armv7s x86_64";
 			};
 			name = Debug;
 		};
 		C4E8E7452090B767000F7B63 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -381,6 +406,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "BSKToolBox-Swift/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -389,8 +415,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "cn.liuwanin.BSKToolBox-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "arm64 armv7 armv7s x86_64";
 			};
 			name = Release;
 		};

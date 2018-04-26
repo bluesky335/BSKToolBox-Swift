@@ -12,8 +12,7 @@ public class BSKUtils {
 
 }
 
-
-public extension BSKUtils{
+extension BSKUtils{
 
     public static func runOnMainThreadSync( closure: ()->Void)->Void{
         if Thread.isMainThread {
@@ -29,4 +28,5 @@ public extension BSKUtils{
             DispatchQueue.main.async(execute: closure)
         }
     }
+
 }
