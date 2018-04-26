@@ -14,6 +14,7 @@
 		C4E8E76B20916991000F7B63 /* String+Hash.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E8E76A20916991000F7B63 /* String+Hash.swift */; };
 		C4E8E77D20917C0C000F7B63 /* NSString+HASH.h in Headers */ = {isa = PBXBuildFile; fileRef = C4E8E77B20917C0C000F7B63 /* NSString+HASH.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C4E8E77E20917C0C000F7B63 /* NSString+HASH.m in Sources */ = {isa = PBXBuildFile; fileRef = C4E8E77C20917C0C000F7B63 /* NSString+HASH.m */; };
+		C4E8E7822091AF4A000F7B63 /* String+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E8E7812091AF4A000F7B63 /* String+URL.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +38,7 @@
 		C4E8E76A20916991000F7B63 /* String+Hash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Hash.swift"; sourceTree = "<group>"; };
 		C4E8E77B20917C0C000F7B63 /* NSString+HASH.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+HASH.h"; sourceTree = "<group>"; };
 		C4E8E77C20917C0C000F7B63 /* NSString+HASH.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+HASH.m"; sourceTree = "<group>"; };
+		C4E8E7812091AF4A000F7B63 /* String+URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+URL.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				C4E8E76A20916991000F7B63 /* String+Hash.swift */,
+				C4E8E7812091AF4A000F7B63 /* String+URL.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4E8E7822091AF4A000F7B63 /* String+URL.swift in Sources */,
 				C4E8E76B20916991000F7B63 /* String+Hash.swift in Sources */,
 				C4E8E7632090BB12000F7B63 /* BSKUtils.swift in Sources */,
 				C4E8E77E20917C0C000F7B63 /* NSString+HASH.m in Sources */,

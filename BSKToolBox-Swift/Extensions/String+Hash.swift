@@ -9,32 +9,32 @@
 import Foundation
 
 public extension String{
-   public var sha1:String{
+    var sha1:String{
         let nsstr = self as NSString
         return nsstr.bsk_sha1()
     }
 
-   public var sha224:String{
+    var sha224:String{
         let nsstr = self as NSString
         return nsstr.bsk_sha224()
     }
 
-   public var sha256:String{
+    var sha256:String{
         let nsstr = self as NSString
         return nsstr.bsk_sha256()
     }
 
-   public var sha384:String{
+    var sha384:String{
         let nsstr = self as NSString
         return nsstr.bsk_sha384()
     }
 
-   public var sha512:String{
+    var sha512:String{
         let nsstr = self as NSString
         return nsstr.bsk_sha512()
     }
 
-   public var MD5:String{
+    var MD5:String{
         let nsstr = self as NSString
         return nsstr.bsk_MD5()
     }
