@@ -9,7 +9,7 @@
 import XCTest
 import BSKToolBox_Swift
 
-class BSKToolBox_SwiftTests: XCTestCase {
+class BSKToolBox_Swift_SHA_Tests: XCTestCase {
 
     let inouts = ["123456&","abcdef$g","12345abcdef.","中文测试!!！！"]
 
@@ -49,7 +49,7 @@ class BSKToolBox_SwiftTests: XCTestCase {
         super.tearDown()
     }
     
-    func test_String_SHA256() {
+    func test_String_SHA() {
         for (index,str) in inouts.enumerated() {
             XCTAssert(str.sha1==answers_SHA1[index])
             XCTAssert(str.MD5==answers_MD5[index])
@@ -58,7 +58,6 @@ class BSKToolBox_SwiftTests: XCTestCase {
             XCTAssert(str.sha224==answers_SHA224[index])
             XCTAssert(str.sha384==answers_SHA384[index])
             XCTAssert(str.sha512==answers_SHA512[index])
-            print("index:\(index),\n\(str.sha1)\n\(answers_SHA1[index])")
         }
     }
     

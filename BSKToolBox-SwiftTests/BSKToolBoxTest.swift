@@ -20,9 +20,41 @@ class BSKToolBoxTest: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testRegularExpression() {
+        guard let a = try? "sss   sss   sss   sss".replace(match: "\\s{1,}", with: "==", options: NSRegularExpression.Options.caseInsensitive)
+            else{
+                return
+        }
+        XCTAssert(a=="sss==sss==sss==sss")
+        do{
+            let _ = try "sss   sss   sss   sss".replace(match: "\\s{1,", with: "==", options: NSRegularExpression.Options.caseInsensitive)
+        }catch{
+            print(">=>\(error)")
+            XCTAssert(true)
+            return
+        }
+        XCTAssert(false)
+        print(a)
+
+    }
+
+    func testRemoveWhiteCharaters()  {
+        let x = " a    b  c中文 d   e f    g  "
+        XCTAssert(x.removeWhiteCharacters()=="abc中文defg")
+        let y = "asdfgh"
+        XCTAssert(y.removeWhiteCharacters()==y)
+        XCTAssert(x.removeWhiteCharacters(at: .StartAndEnd)=="a    b  c中文 d   e f    g")
+        XCTAssert(x.removeWhiteCharacters(at: .End)==" a    b  c中文 d   e f    g")
+        XCTAssert(x.removeWhiteCharacters(at: .Start)=="a    b  c中文 d   e f    g  ")
+    }
+
+    func testStringMatch() {
+        let testStr = "abcdefg"
+
+        assert(testStr.isMatch(regular: "^[a-z]{1,7}$"))
+
+        let testStr2 = "13983311153"
+        assert(testStr2.isMatch(regular: "\\d{11}"))
 
     }
     

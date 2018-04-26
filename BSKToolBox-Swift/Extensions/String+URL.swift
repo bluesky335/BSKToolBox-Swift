@@ -7,3 +7,15 @@
 //
 
 import Foundation
+
+public extension String
+{
+    var toURL:URL?{
+        return URL(string: self)
+    }
+
+    var toHttpsURL:URL?{
+        return URL(string: self.replacingOccurrences(of: "http://", with: "https://"))
+    }
+
+}
