@@ -14,6 +14,7 @@
 		C4E8E76B20916991000F7B63 /* String+Hash.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E8E76A20916991000F7B63 /* String+Hash.swift */; };
 		C4E8E77D20917C0C000F7B63 /* NSString+HASH.h in Headers */ = {isa = PBXBuildFile; fileRef = C4E8E77B20917C0C000F7B63 /* NSString+HASH.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C4E8E77E20917C0C000F7B63 /* NSString+HASH.m in Sources */ = {isa = PBXBuildFile; fileRef = C4E8E77C20917C0C000F7B63 /* NSString+HASH.m */; };
+		C4E8E78020919EA6000F7B63 /* BSKToolBoxTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E8E77F20919EA6000F7B63 /* BSKToolBoxTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +38,7 @@
 		C4E8E76A20916991000F7B63 /* String+Hash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Hash.swift"; sourceTree = "<group>"; };
 		C4E8E77B20917C0C000F7B63 /* NSString+HASH.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+HASH.h"; sourceTree = "<group>"; };
 		C4E8E77C20917C0C000F7B63 /* NSString+HASH.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+HASH.m"; sourceTree = "<group>"; };
+		C4E8E77F20919EA6000F7B63 /* BSKToolBoxTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSKToolBoxTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 			children = (
 				C4E8E73D2090B767000F7B63 /* BSKToolBox_SwiftTests.swift */,
 				C4E8E73F2090B767000F7B63 /* Info.plist */,
+				C4E8E77F20919EA6000F7B63 /* BSKToolBoxTest.swift */,
 			);
 			path = "BSKToolBox-SwiftTests";
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4E8E78020919EA6000F7B63 /* BSKToolBoxTest.swift in Sources */,
 				C4E8E73E2090B767000F7B63 /* BSKToolBox_SwiftTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -381,9 +385,11 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "cn.liuwanin.BSKToolBox-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
@@ -415,6 +421,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "cn.liuwanin.BSKToolBox-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -434,8 +441,10 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "cn.liuwanin.BSKToolBox-SwiftTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -453,8 +462,10 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "cn.liuwanin.BSKToolBox-SwiftTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
