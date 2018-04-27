@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C42EC8A12092F718003E53E9 /* UIView+IBDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42EC8A02092F718003E53E9 /* UIView+IBDesign.swift */; };
 		C4E8E7392090B767000F7B63 /* BSKToolBox_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4E8E72F2090B767000F7B63 /* BSKToolBox_Swift.framework */; };
 		C4E8E73E2090B767000F7B63 /* BSKToolBox_Swift_SHA_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E8E73D2090B767000F7B63 /* BSKToolBox_Swift_SHA_Tests.swift */; };
 		C4E8E7402090B767000F7B63 /* BSKToolBox_Swift.h in Headers */ = {isa = PBXBuildFile; fileRef = C4E8E7322090B767000F7B63 /* BSKToolBox_Swift.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -30,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C42EC8A02092F718003E53E9 /* UIView+IBDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+IBDesign.swift"; sourceTree = "<group>"; };
 		C4E8E72F2090B767000F7B63 /* BSKToolBox_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BSKToolBox_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4E8E7322090B767000F7B63 /* BSKToolBox_Swift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSKToolBox_Swift.h; sourceTree = "<group>"; };
 		C4E8E7332090B767000F7B63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -64,6 +66,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C42EC89E2092F6F2003E53E9 /* String */ = {
+			isa = PBXGroup;
+			children = (
+				C4E8E76A20916991000F7B63 /* String+Hash.swift */,
+				C4E8E7812091AF4A000F7B63 /* String+URL.swift */,
+				C4E8E7842091B3DE000F7B63 /* String+RegularExpression.swift */,
+			);
+			path = String;
+			sourceTree = "<group>";
+		};
+		C42EC89F2092F700003E53E9 /* UIview */ = {
+			isa = PBXGroup;
+			children = (
+				C42EC8A02092F718003E53E9 /* UIView+IBDesign.swift */,
+			);
+			path = UIview;
+			sourceTree = "<group>";
+		};
 		C4E8E7252090B767000F7B63 = {
 			isa = PBXGroup;
 			children = (
@@ -108,9 +128,8 @@
 		C4E8E7692091696E000F7B63 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				C4E8E76A20916991000F7B63 /* String+Hash.swift */,
-				C4E8E7812091AF4A000F7B63 /* String+URL.swift */,
-				C4E8E7842091B3DE000F7B63 /* String+RegularExpression.swift */,
+				C42EC89F2092F700003E53E9 /* UIview */,
+				C42EC89E2092F6F2003E53E9 /* String */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -230,6 +249,7 @@
 				C4E8E76B20916991000F7B63 /* String+Hash.swift in Sources */,
 				C4E8E7632090BB12000F7B63 /* BSKUtils.swift in Sources */,
 				C4E8E77E20917C0C000F7B63 /* NSString+HASH.m in Sources */,
+				C42EC8A12092F718003E53E9 /* UIView+IBDesign.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,6 +413,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACH_O_TYPE = staticlib;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "cn.liuwanin.BSKToolBox-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -426,6 +447,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACH_O_TYPE = staticlib;
 				PRODUCT_BUNDLE_IDENTIFIER = "cn.liuwanin.BSKToolBox-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
