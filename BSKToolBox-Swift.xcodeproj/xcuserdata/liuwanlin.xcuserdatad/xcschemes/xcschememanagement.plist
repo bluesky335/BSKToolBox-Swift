@@ -6,28 +6,21 @@
 	<dict>
 		<key>BSKToolBox-Swift.xcscheme</key>
 		<dict>
-			<key>isShown</key>
-			<false/>
 			<key>orderHint</key>
-			<integer>5</integer>
+			<integer>16</integer>
 		</dict>
 		<key>BSKToolBox-SwiftTests.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>8</integer>
+			<integer>17</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>C4E8E72E2090B767000F7B63</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>C4E8E7372090B767000F7B63</key>
 		<dict>
 			<key>primary</key>
-			<true/>
+			<true />
 		</dict>
 	</dict>
 </dict>
