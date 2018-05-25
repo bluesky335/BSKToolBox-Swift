@@ -28,5 +28,28 @@ extension BSKUtils{
             DispatchQueue.main.async(execute: closure)
         }
     }
+    
+   public static var topViewController:UIViewController?{
+        var vc = UIApplication.shared.keyWindow?.rootViewController
+        while vc != nil {
+            if vc?.isKind(of: UINavigationController.self) ?? false {
+                let nvc = vc as! UINavigationController
+                vc = nvc.topViewController
+                continue
+            }else if vc?.isKind(of: UITabBarController.self) ?? false {
+                let tvc = vc as! UITabBarController
+                vc = tvc.selectedViewController
+                continue
+            }else{
+               let pvc = vc?.presentedViewController
+                if pvc == nil{
+                    return vc
+                }else{
+                    vc = pvc
+                }
+            }
+        }
+        return vc
+    }
 
 }
