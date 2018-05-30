@@ -6,8 +6,24 @@
 //  Copyright © 2018年 LiuWanLin. All rights reserved.
 //
 
-
 extension Decodable {
+    
+
+    public static func decode(from json:Any?)->Self?{
+        guard let ajson = json else {return nil}
+
+        if let jsonStr = ajson as? String {
+            return decode(from: jsonStr)
+        }
+        else if let jsonData = ajson as? Data {
+            return decode(from: jsonData)
+        }
+        else if let jsonDic = ajson as? [String:Any]{
+            return decode(from: jsonDic)
+        }
+        return nil
+    }
+    
    public static func decode(from json:Data?)->Self?{
         guard let json = json else {return nil}
         return try?JSONDecoder().decode(Self.self, from: json)
