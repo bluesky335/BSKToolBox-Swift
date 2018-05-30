@@ -30,7 +30,7 @@ extension BSKUtils{
     }
     
    public static var topViewController:UIViewController?{
-        var vc = UIApplication.shared.keyWindow?.rootViewController
+        var vc = UIApplication.shared.windows[0].rootViewController
         while vc != nil {
             if vc?.isKind(of: UINavigationController.self) ?? false {
                 let nvc = vc as! UINavigationController

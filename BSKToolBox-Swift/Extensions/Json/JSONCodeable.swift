@@ -8,16 +8,16 @@
 
 
 extension Decodable {
-    static func decode(from json:Data?)->Self?{
+   public static func decode(from json:Data?)->Self?{
         guard let json = json else {return nil}
         return try?JSONDecoder().decode(Self.self, from: json)
     }
-    static func decode(from json:String?)->Self?{
+   public static func decode(from json:String?)->Self?{
         guard let json = json else {return nil}
         guard let data = json.data(using: .utf8)else{return nil}
         return try?JSONDecoder().decode(Self.self, from: data)
     }
-    static func decode(from json:[String:Any]?)->Self?{
+   public static func decode(from json:[String:Any]?)->Self?{
         guard let json = json else {return nil}
         guard let data = try?JSONSerialization.data(withJSONObject: json, options: .prettyPrinted) else {return nil}
         return try?JSONDecoder().decode(Self.self, from: data)
