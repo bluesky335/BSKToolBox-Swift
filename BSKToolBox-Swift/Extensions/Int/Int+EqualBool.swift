@@ -29,5 +29,14 @@ public extension Int{
         return bool != left
     }
     
+    public var boolValue:Bool{
+        return self != 0
+    }
     
+}
+
+public extension Bool{
+    public var intValue:Int{
+        return self ? 1 : 0
+    }
 }

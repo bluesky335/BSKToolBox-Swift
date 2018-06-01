@@ -92,6 +92,32 @@ public extension String{
     }
 
 
+    /// 如果为"true"或者为非零的数字返回 true 其他返回 false
+    var boolValue:Bool{
+        if self.isNumber {
+            if let value = self.floatValue {
+                return value != 0
+            }
+        }else{
+            return self.isMatch(regular: "^true$")
+        }
+        return false
+    }
+    
+    var intValue:Int?{
+        if self.isIntNumber {
+            return Int(self)
+        }
+        return nil
+    }
+    
+    var floatValue:Float?{
+        if self.isNumber {
+            return Float(self)
+        }else{
+            return nil
+        }
+    }
 
     /// 与正则表达式是否匹配
     ///
@@ -101,7 +127,5 @@ public extension String{
         let predicate = NSPredicate(format: "SELF MATCHES %@",regular)
         return predicate.evaluate(with: self)
     }
-
-
 
 }
