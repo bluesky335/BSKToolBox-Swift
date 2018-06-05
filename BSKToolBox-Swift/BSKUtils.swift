@@ -30,26 +30,28 @@ extension BSKUtils{
     }
     
    public static var topViewController:UIViewController?{
-        var vc = UIApplication.shared.windows[0].rootViewController
-        while vc != nil {
-            if vc?.isKind(of: UINavigationController.self) ?? false {
-                let nvc = vc as! UINavigationController
-                vc = nvc.topViewController
-                continue
-            }else if vc?.isKind(of: UITabBarController.self) ?? false {
-                let tvc = vc as! UITabBarController
-                vc = tvc.selectedViewController
-                continue
-            }else{
-               let pvc = vc?.presentedViewController
-                if pvc == nil{
-                    return vc
-                }else{
-                    vc = pvc
+    guard let rootVc = UIApplication.shared.windows[0].rootViewController else{return nil}
+
+    var resultVc = rootVc
+
+    var controllers = [rootVc]
+        while controllers.count != 0 {
+            resultVc = controllers.removeFirst()
+            if let nvc = resultVc as? UINavigationController{
+                if let topvc = nvc.topViewController {
+                    controllers.append(topvc)
                 }
+                continue
+            }else if let tVc = resultVc as? UITabBarController {
+                if let selectedVc = tVc.selectedViewController{
+                    controllers.append(selectedVc)
+                }
+                continue
+            }else if let pvc = resultVc.presentedViewController {
+                controllers.append(pvc)
             }
         }
-        return vc
+        return resultVc
     }
 
 }
