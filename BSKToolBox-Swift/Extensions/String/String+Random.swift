@@ -19,4 +19,19 @@ extension String{
             }
             return randomString
     }
+
+    public static func random(length:Int,in Characters:String)->String {
+        
+        let letters = Characters
+        let len = UInt32(letters.count)
+        var randomString = ""
+        for _ in 0 ..< length {
+            let rand = arc4random_uniform(len)
+            let index = letters.index(letters.startIndex, offsetBy: Int(rand))
+            let char = letters[index]
+            randomString.append(char)
+        }
+        return randomString
+    }
+
 }

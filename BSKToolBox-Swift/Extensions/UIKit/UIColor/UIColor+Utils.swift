@@ -9,7 +9,12 @@
 import Foundation
 import UIKit
 
-extension UIColor{
+public extension UIColor{
+
+    public convenience init(R:Int, G:Int, B:Int, A:CGFloat){
+        self.init(red: CGFloat(R)/255.0, green: CGFloat(G)/255.0, blue: CGFloat(B)/255.0, alpha: A)
+    }
+
     public convenience init(_ HexString:String) {
         var R:CGFloat = 0.0
         var G:CGFloat = 0.0
@@ -64,5 +69,10 @@ extension UIColor{
             B = CGFloat(Int(Bstr,radix:16)!)/colorFull
         }
         self.init(red: R, green: G, blue: B, alpha: A)
+    }
+
+    public static var random:UIColor {
+        let colorStr = String.random(length: 6, in: "0123456789ABCDEF")
+        return UIColor("#\(colorStr)")
     }
 }
