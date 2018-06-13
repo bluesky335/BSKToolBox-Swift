@@ -87,8 +87,14 @@ public extension String{
         return isMatch(regular: "^\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$")
     }
 
+    ///是否是用户id
+    var isUserID:Bool {
+        return isMatch(regular: "^[0-9]\\d{7}$")
+    }
+    
+    ///是否是正确身份证
     var isIDCardNumber:Bool{
-        fatalError("还没有实现")
+        return isMatch(regular: "^(\\d{14}|\\d{17})(\\d|[xX])$")
     }
 
 
