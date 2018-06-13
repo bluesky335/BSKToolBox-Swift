@@ -24,19 +24,34 @@ extension Decodable {
         return nil
     }
     
-   public static func decode(from json:Data?)->Self?{
+    public static func decode(from json:Data?)->Self?{
         guard let json = json else {return nil}
-        return try?JSONDecoder().decode(Self.self, from: json)
+        do {
+            return try JSONDecoder().decode(Self.self, from: json)
+        }catch(let error){
+            debugLog(error)
+            return nil
+        }
     }
-   public static func decode(from json:String?)->Self?{
+    public static func decode(from json:String?)->Self?{
         guard let json = json else {return nil}
         guard let data = json.data(using: .utf8)else{return nil}
-        return try?JSONDecoder().decode(Self.self, from: data)
+        do {
+            return try JSONDecoder().decode(Self.self, from: data)
+        }catch(let error){
+            debugLog(error)
+            return nil
+        }
     }
-   public static func decode(from json:[String:Any]?)->Self?{
+    public static func decode(from json:[String:Any]?)->Self?{
         guard let json = json else {return nil}
         guard let data = try?JSONSerialization.data(withJSONObject: json, options: .prettyPrinted) else {return nil}
-        return try?JSONDecoder().decode(Self.self, from: data)
+        do {
+            return try JSONDecoder().decode(Self.self, from: data)
+        }catch(let error){
+            debugLog(error)
+            return nil
+        }
     }
 }
 
@@ -71,6 +86,17 @@ extension CustomStringConvertible where Self:Codable{
         return self.jsonStr ?? "<error>"
     }
 }
+
+extension Dictionary{
+    public var jsonStr:String{
+        do{
+            let data = try JSONSerialization.data(withJSONObject: self, options: JSONSerialization.WritingOptions.prettyPrinted)
+            return String(data: data, encoding: .utf8) ?? "nil -> Json 转换出错"
+        }catch(let error){
+                return error.localizedDescription
+            }
+        }
+    }
 
 public typealias Json2Model = Codable&CustomStringConvertible
 
