@@ -10,10 +10,10 @@ import Foundation
 
 extension Dictionary where Key:StringProtocol {
     public var urlQueryString:String {
-        var str = "?"
+        var str = [String]()
         for (key,value) in self{
             str.append("\(key)=\(value)")
         }
-        return str
+        return "?\(str.joined(separator: "&"))".addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed) ?? ""
     }
 }

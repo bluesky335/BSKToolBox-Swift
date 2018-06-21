@@ -18,7 +18,6 @@ public struct BSKActionItem{
         self.style = style
         self.action = action
     }
-    
 }
 
 public extension BSKUtils{
@@ -29,6 +28,6 @@ public extension BSKUtils{
             let action = UIAlertAction(title: item.title, style: item.style, handler: item.action)
             alertVc.addAction(action)
         }
-    self.topViewController?.present(alertVc, animated: true, completion: nil)
+        self.topViewController?.present(alertVc, animated: true, completion:nil)
     }
 }
