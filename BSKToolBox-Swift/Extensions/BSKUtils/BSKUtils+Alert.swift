@@ -18,17 +18,16 @@ public struct BSKActionItem{
         self.style = style
         self.action = action
     }
-    
 }
 
 public extension BSKUtils{
     
   public static func alert(title:String?,message:String?,style:UIAlertControllerStyle = .alert,actions:[BSKActionItem]) -> Void {
-        let alertVc = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        let alertVc = UIAlertController(title: title, message: message, preferredStyle:style)
         for item in actions{
             let action = UIAlertAction(title: item.title, style: item.style, handler: item.action)
             alertVc.addAction(action)
         }
-    self.topViewController?.present(alertVc, animated: true, completion: nil)
+        self.topViewController?.present(alertVc, animated: true, completion:nil)
     }
 }

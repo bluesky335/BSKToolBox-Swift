@@ -13,12 +13,16 @@ public class BSKUtils {
 }
 
 
-public func debugLog(_ items:Any...,file:String = #file,line:Int = #line){
+internal func debugLog(_ items:Any...,showFlag:Bool = true,file:String = #file,line:Int = #line){
 
     #if DEBUG
     var strs = [String]()
     for item in items {
         strs.append("\(item)")
+    }
+    if !showFlag {
+        print(strs.joined(separator: " "))
+        return
     }
     let url = URL(fileURLWithPath: file)
     let fileName = url.lastPathComponent
