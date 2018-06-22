@@ -12,6 +12,7 @@
 		C42F6F8920A2A2FE004B6290 /* UIColor+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42F6F8820A2A2FE004B6290 /* UIColor+Utils.swift */; };
 		C42F6F8E20A2A40E004B6290 /* UIImage+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42F6F8D20A2A40E004B6290 /* UIImage+Color.swift */; };
 		C48AFD1420D39BB700512F85 /* String+PinYin.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48AFD1320D39BB700512F85 /* String+PinYin.swift */; };
+		C48F7C2720DB9B8500E88B48 /* BSKEasterEgg.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F7C2620DB9B8500E88B48 /* BSKEasterEgg.swift */; };
 		C4A4AC2C20AB146D0090EF40 /* JSONCodeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A4AC2B20AB146D0090EF40 /* JSONCodeable.swift */; };
 		C4E8E7392090B767000F7B63 /* BSKToolBox_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4E8E72F2090B767000F7B63 /* BSKToolBox_Swift.framework */; };
 		C4E8E73E2090B767000F7B63 /* BSKToolBox_Swift_SHA_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E8E73D2090B767000F7B63 /* BSKToolBox_Swift_SHA_Tests.swift */; };
@@ -46,6 +47,7 @@
 		C42F6F8820A2A2FE004B6290 /* UIColor+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Utils.swift"; sourceTree = "<group>"; };
 		C42F6F8D20A2A40E004B6290 /* UIImage+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Color.swift"; sourceTree = "<group>"; };
 		C48AFD1320D39BB700512F85 /* String+PinYin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+PinYin.swift"; sourceTree = "<group>"; };
+		C48F7C2620DB9B8500E88B48 /* BSKEasterEgg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSKEasterEgg.swift; sourceTree = "<group>"; };
 		C4A4AC2B20AB146D0090EF40 /* JSONCodeable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONCodeable.swift; sourceTree = "<group>"; };
 		C4E8E72F2090B767000F7B63 /* BSKToolBox_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BSKToolBox_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4E8E7322090B767000F7B63 /* BSKToolBox_Swift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSKToolBox_Swift.h; sourceTree = "<group>"; };
@@ -133,6 +135,14 @@
 			path = UIKit;
 			sourceTree = "<group>";
 		};
+		C48F7C2520DB9B6B00E88B48 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				C48F7C2620DB9B8500E88B48 /* BSKEasterEgg.swift */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
 		C4A4AC2A20AB14430090EF40 /* Json */ = {
 			isa = PBXGroup;
 			children = (
@@ -162,6 +172,7 @@
 		C4E8E7312090B767000F7B63 /* BSKToolBox-Swift */ = {
 			isa = PBXGroup;
 			children = (
+				C48F7C2520DB9B6B00E88B48 /* Other */,
 				C4E8E7692091696E000F7B63 /* Extensions */,
 				C4E8E7322090B767000F7B63 /* BSKToolBox_Swift.h */,
 				C4E8E7332090B767000F7B63 /* Info.plist */,
@@ -350,6 +361,7 @@
 				C4E8E77E20917C0C000F7B63 /* NSString+HASH.m in Sources */,
 				C42EC8A12092F718003E53E9 /* UIView+IBDesign.swift in Sources */,
 				C70066B720BF9639001022E3 /* BSKUtils+Alert.swift in Sources */,
+				C48F7C2720DB9B8500E88B48 /* BSKEasterEgg.swift in Sources */,
 				C42F6F8920A2A2FE004B6290 /* UIColor+Utils.swift in Sources */,
 				C760957E20BC33B4009CA8FA /* Dictionary+URL_query.swift in Sources */,
 				260E8A3DFAF843CA8DAC309F /* String+Random.swift in Sources */,
