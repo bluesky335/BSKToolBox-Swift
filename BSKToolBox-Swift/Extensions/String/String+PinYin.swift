@@ -10,6 +10,9 @@ import Foundation
 
 public extension String{
     var firstPinYin:String {
+        guard self.count>0 else {
+            return self
+        }
         let mutableString = NSMutableString(string: self)
         //        把汉字转为拼音
         CFStringTransform(mutableString, nil, kCFStringTransformToLatin, false)
