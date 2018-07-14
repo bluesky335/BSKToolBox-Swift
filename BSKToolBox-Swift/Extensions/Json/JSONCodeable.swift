@@ -7,10 +7,13 @@
 //
 
 extension Decodable {
-    
+
 
     public static func decode(from json:Any?)->Self?{
-        guard let ajson = json else {return nil}
+        guard let ajson = json else {
+            debugLog("数据为空")
+            return nil
+        }
 
         if let jsonStr = ajson as? String {
             return decode(from: jsonStr)
@@ -20,12 +23,23 @@ extension Decodable {
         }
         else if let jsonDic = ajson as? [String:Any]{
             return decode(from: jsonDic)
+        }else {
+            do{
+                let data = try JSONSerialization.data(withJSONObject: ajson, options: .prettyPrinted)
+                return decode(from: data)
+            }
+            catch(let error){
+                debugLog(error)
+            }
         }
         return nil
     }
-    
+
     public static func decode(from json:Data?)->Self?{
-        guard let json = json else {return nil}
+        guard let json = json else {
+            debugLog("数据为空")
+            return nil
+        }
         do {
             return try JSONDecoder().decode(Self.self, from: json)
         }catch(let error){
@@ -34,7 +48,10 @@ extension Decodable {
         }
     }
     public static func decode(from json:String?)->Self?{
-        guard let json = json else {return nil}
+        guard let json = json else {
+            debugLog("数据为空")
+            return nil
+        }
         guard let data = json.data(using: .utf8)else{return nil}
         do {
             return try JSONDecoder().decode(Self.self, from: data)
@@ -88,15 +105,15 @@ extension CustomStringConvertible where Self:Codable{
 }
 
 extension Dictionary{
-    public var jsonStr:String{
+    public var jsonStr:String?{
         do{
             let data = try JSONSerialization.data(withJSONObject: self, options: JSONSerialization.WritingOptions.prettyPrinted)
-            return String(data: data, encoding: .utf8) ?? "nil -> Json 转换出错"
+            return String(data: data, encoding: .utf8)
         }catch(let error){
-                return error.localizedDescription
-            }
+            return error.localizedDescription
         }
     }
+}
 
 public typealias Json2Model = Codable&CustomStringConvertible
 
