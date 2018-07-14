@@ -8,7 +8,19 @@
 
 import Foundation
 
-public extension Int{
+public protocol BSKBoolValue{
+    var boolValue:Bool{get}
+
+    static func == (left:Self,right:Bool) -> Bool
+
+    static func == (left:Bool,right:Self) -> Bool
+
+    static func != (left:Self,right:Bool) -> Bool
+
+    static func != (left:Bool,right:Self) -> Bool
+}
+
+extension Int:BSKBoolValue{
     static public func == (left:Int,right:Bool) -> Bool{
         let bool = left != 0
         return bool == right
@@ -32,7 +44,16 @@ public extension Int{
     public var boolValue:Bool{
         return self != 0
     }
-    
+}
+
+public extension Optional where Wrapped:BSKBoolValue{
+    public var boolValue:Bool{
+        if let value = self {
+           return value.boolValue
+        }else{
+            return false
+        }
+    }
 }
 
 public extension Bool{
