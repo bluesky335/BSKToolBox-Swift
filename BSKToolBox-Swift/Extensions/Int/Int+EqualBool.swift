@@ -10,6 +10,9 @@ import Foundation
 
 public protocol BSKBoolValue{
     var boolValue:Bool{get}
+}
+
+public protocol BSKEquaToBool{
 
     static func == (left:Self,right:Bool) -> Bool
 
@@ -20,7 +23,7 @@ public protocol BSKBoolValue{
     static func != (left:Bool,right:Self) -> Bool
 }
 
-extension Int:BSKBoolValue{
+extension Int:BSKBoolValue,BSKEquaToBool{
     static public func == (left:Int,right:Bool) -> Bool{
         let bool = left != 0
         return bool == right
@@ -54,6 +57,13 @@ public extension Optional where Wrapped:BSKBoolValue{
             return false
         }
     }
+}
+
+extension Bool:BSKBoolValue{
+    public var boolValue: Bool {
+        return self
+    }
+
 }
 
 public extension Bool{
