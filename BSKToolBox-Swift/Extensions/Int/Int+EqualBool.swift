@@ -63,7 +63,6 @@ extension Bool:BSKBoolValue{
     public var boolValue: Bool {
         return self
     }
-
 }
 
 public extension Bool{
