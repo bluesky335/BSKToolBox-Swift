@@ -16,20 +16,23 @@ public class BSKUtils {
 internal func debugLog(_ items:Any...,showFlag:Bool = true,file:String = #file,line:Int = #line){
 
     #if DEBUG
-    var strs = [String]()
-    for item in items {
-        strs.append("\(item)")
+
+    BSKUtils.runOnMainThreadSync {
+        var strs = [String]()
+        for item in items {
+            strs.append(String(describing: item))
+        }
+        if !showFlag {
+            print(strs.joined(separator: " "))
+            return
+        }
+        let url = URL(fileURLWithPath: file)
+        let fileName = url.lastPathComponent
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
+        print("=> \(formatter.string(from: date)) 行:\(line) 文件:\(fileName)\n=> \(strs.joined(separator: " "))\n")
     }
-    if !showFlag {
-        print(strs.joined(separator: " "))
-        return
-    }
-    let url = URL(fileURLWithPath: file)
-    let fileName = url.lastPathComponent
-    let date = Date()
-    let formatter = DateFormatter()
-    formatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
-    print("┏━【\(formatter.string(from: date))】行:\(line) 文件:\(fileName)\n┗━ \(strs.joined(separator: " "))\n")
     #endif
 }
 

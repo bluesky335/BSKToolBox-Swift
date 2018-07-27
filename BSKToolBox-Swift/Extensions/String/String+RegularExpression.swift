@@ -28,7 +28,8 @@ public extension String{
     func replace(match regularExpression:String, with template:String, options:NSRegularExpression.Options) throws -> String {
         do{
             let re = try NSRegularExpression(pattern: regularExpression, options: options)
-            return re.stringByReplacingMatches(in: self, options: .reportProgress, range: NSRange.init(location: 0, length: count), withTemplate: template)
+            let resultStr = re.stringByReplacingMatches(in: self, options: .reportProgress, range: NSRange.init(location: 0, length: count), withTemplate: template)
+            return resultStr
         }catch{
             throw error
         }

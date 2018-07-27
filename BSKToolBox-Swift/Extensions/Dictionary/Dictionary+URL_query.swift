@@ -14,6 +14,7 @@ extension Dictionary where Key:StringProtocol {
         for (key,value) in self{
             str.append("\(key)=\(value)")
         }
-        return "?\(str.joined(separator: "&"))".addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed) ?? ""
+        let QueryString = "?\(str.joined(separator: "&"))".addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed) ?? ""
+        return QueryString
     }
 }
