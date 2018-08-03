@@ -11,14 +11,18 @@ import Foundation
 extension URL{
     
    public var queryParameters:[String:String]?{
-        guard let query = self.query?.removingPercentEncoding else {return nil}
+        guard let query = self.query else {return nil}
         let parametersArray = query.split(separator: "&").map{String($0)}.map{$0.split(separator: "=").map{String($0)}}
         var parameters = [String:String]()
         for str in parametersArray {
             if str.count>1 {
-                parameters[str[0]] = str[1]
+                if let key = str[0].removingPercentEncoding,let value = str[1].removingPercentEncoding{
+                    parameters[key] = value
+                }
             }else if str.count>0{
-                parameters[str[0]] = ""
+                if let key = str[0].removingPercentEncoding {
+                    parameters[key] = ""
+                }
             }
         }
         return parameters
