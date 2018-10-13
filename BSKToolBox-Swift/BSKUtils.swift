@@ -97,20 +97,33 @@ extension BSKUtils{
     var controllers = [rootVc]
         while controllers.count != 0 {
             resultVc = controllers.removeFirst()
-            if let nvc = resultVc as? UINavigationController{
-                if let topvc = nvc.topViewController {
-                    controllers.append(topvc)
-                }
-                continue
-            }else if let tVc = resultVc as? UITabBarController {
-                if let selectedVc = tVc.selectedViewController{
-                    controllers.append(selectedVc)
-                }
-                continue
-            }else if let pvc = resultVc.presentedViewController {
-                controllers.append(pvc)
+            
+            if let topvc = resultVc.topChildVC{
+                controllers.append(topvc)
             }
-        }
+    }
         return resultVc
+    }
+}
+
+protocol BSKTopChildVC {
+    var topChildVC:UIViewController?{get}
+}
+
+extension UIViewController:BSKTopChildVC{
+   @objc var topChildVC: UIViewController?{
+        return self.presentedViewController
+    }
+}
+
+extension UINavigationController{
+    override var topChildVC: UIViewController?{
+        return self.topViewController
+    }
+}
+
+extension UITabBarController{
+    override var topChildVC: UIViewController?{
+        return self.selectedViewController
     }
 }
