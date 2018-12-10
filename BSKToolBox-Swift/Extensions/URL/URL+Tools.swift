@@ -27,4 +27,43 @@ extension URL{
         }
         return parameters
     }
+    
+    
+    /// 使用万象优图的api缩放腾讯云的图片，仅对符合正则"\.(file|cosgz|picgz)\.myqcloud\.com"的图片URL生效
+    /// 限定缩略图的宽高最大值。该操作会将图像等比缩放至宽高都小于设定最大值。如原图大小为 1000x500，将参数设定为width = 500 height = 400后，图像会等比缩放至 500x250。如果只指定一边，则另一边自适应
+    ///
+    /// - Parameters:
+    ///   - width: 最大宽度 单位pt
+    ///   - height: 最大高度 单位pt
+    ///   - quality: 图片质量，取值范围 0-100 ，默认值为原图质量；取原图质量和指定质量的最小值；
+    /// - Returns: 处理后的URL
+    public func CI_imageSize(width:Int?, height:Int?, quality:Int? = nil)->URL{
+        let qcloudImageUrlReg = "[a-zA-Z0-9-_]+\\.(file|cosgz|picgz)\\.myqcloud\\.com"
+        let qcloudImageUrlReg2 = "\\.(file|cosgz|picgz)\\.myqcloud\\.com"
+        if self.host?.isMatch(regular: qcloudImageUrlReg) ?? false,width != nil || height != nil {
+            var imageView2Str = "?imageView2/2"
+            if let w = width {
+                imageView2Str+="/w/\(w.pt2px)"
+            }
+            if let h = height {
+                imageView2Str+="/h/\(h.pt2px)"
+            }
+            if let q = quality {
+                imageView2Str+="/q/\(q)"
+            }
+
+            let imageView2Reg = "\\?imageView2\\/[12345](\\/w\\/\\d+)?(\\/h\\/\\d+)?(\\/q\\/\\d+!?)?"
+            
+            var urlStr = (try? self.absoluteString.replace(match: qcloudImageUrlReg2, with: ".picgz.myqcloud.com", options: [])) ?? self.absoluteString
+            if urlStr.isMatch(regular: imageView2Reg){
+                urlStr = (try? urlStr.replace(match: imageView2Reg , with: imageView2Str, options: [])) ?? urlStr
+            }else{
+                urlStr.append(contentsOf: imageView2Str)
+            }
+            return URL(string: urlStr)!
+        }else{
+            return self
+        }
+    }
+    
 }
