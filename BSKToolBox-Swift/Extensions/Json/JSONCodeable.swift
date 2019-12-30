@@ -10,7 +10,7 @@ extension Decodable {
 
 
     public static func decode(from json:Any?)->Self?{
-        guard let ajson = json else {
+        guard let ajson = json,!(json is NSNull) else {
             debugLog("数据为空")
             return nil
         }

@@ -13,8 +13,6 @@ FOUNDATION_EXPORT double BSKToolBox_SwiftVersionNumber;
 //! Project version string for BSKToolBox_Swift.
 FOUNDATION_EXPORT const unsigned char BSKToolBox_SwiftVersionString[];
 
-#import <BSKToolBox_Swift/NSString+HASH.h>
-
 // In this header, you should import all the public headers of your framework using statements like #import <BSKToolBox_Swift/PublicHeader.h>
 
 
